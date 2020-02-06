@@ -18,6 +18,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')   # location of static images, CSS, .js files
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')     # location of media files
 
+LOGIN_URL = 'rango:login'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
