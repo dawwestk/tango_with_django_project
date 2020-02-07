@@ -107,6 +107,9 @@ def add_page(request, category_name_slug):
     context_dict = {'form': form, 'category': category}
     return render(request, 'rango/add_page.html', context=context_dict)
 
+'''
+    --------------- Login/Registration code now handled by registration-redux
+    
 def register(request):
     registered = False
 
@@ -174,14 +177,17 @@ def user_login(request):
         return render(request, 'rango/login.html')
 
 @login_required
-def restricted(request):
-    return render(request, 'rango/restricted.html')
-
-@login_required
 def user_logout(request):
     # We know the user is logged in because of the decorator
     logout(request)
     return redirect(reverse('rango:index'))
+
+    --------------- Login/Registration code now handled by registration-redux
+'''
+
+@login_required
+def restricted(request):
+    return render(request, 'rango/restricted.html')
 
 def visitor_cookie_handler(request):
     # get number of visits to site

@@ -18,7 +18,11 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')   # location of static images, CSS, .js files
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')     # location of media files
 
-LOGIN_URL = 'rango:login'
+# Registration
+REGISTRATION_OPEN = True    # if true, users can register
+REGISTRATION_AUTO_LOGIN = True  #if ture, the user will be auto logged in after registering
+LOGIN_REDIRECT_URL = 'rango:index'
+LOGIN_URL = 'auth_login'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -42,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rango',
+    'registration',
 ]
 
 MIDDLEWARE = [
